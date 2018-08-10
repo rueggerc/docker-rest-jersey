@@ -1,2 +1,1 @@
-# docker-rest-jersey
-Docker App
+Project to learn/demonstration RESTful using Jersey
