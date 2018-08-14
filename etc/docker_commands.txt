@@ -1,0 +1,67 @@
+
+Pulling Docker Images
+========================
+docker image pull ubuntu:latest
+docker image pull centos:latest
+
+
+Image Operations
+================
+# List Images
+docker image ls
+
+#Create
+#psweb
+cd psweb
+
+# Build Image
+#tomcat App
+docker image build -t restjersey:latest .
+
+
+# Tomcat App
+docker container run -it :latest 
+
+#Remove
+docker rmi <IMAGE ID>
+
+================
+Containers
+================
+# List Containers
+docker container ls
+(Look at NAMES column) == hopeful_poinca
+docker ps -a
+
+# Run Detached
+docker container run -d --name rest1 -p 8080:8080 restjersey:latest
+docker container run -d --name rest1 -p 8088:8080 restjersey:latest
+docker container run -d --name rest2 -p 8089:8080 restjersey:latest
+
+# Stop and Restart
+docker container stop rest2
+docker container start rest2
+
+# Run Interactive
+docker container run -it --name rest1 -p 8080:8080 restjersey:latest
+docker container run -it restjersey:latest /bin/bash
+
+# Attach to Running Container
+docker container exec -it <name> bash
+
+# Stop
+docker container stop <id or name>
+
+#Remove Container
+docker rm <id> or <name>
+
+#Remove Exited Containers
+docker rm $(docker ps -a -q -f status=exited)
+
+#Inspect
+docker image inspect tomcat:8.0.47-jre8
+
+
+QUESTIONS/ISSUES
+===========================
+Multiple Log files Aggregation?
