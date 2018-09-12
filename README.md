@@ -28,5 +28,5 @@ docker rm $(docker ps -a -q -f status=exited)
 #Inspect
 docker image inspect tomcat:8.0.47-jre8
 
-#Remove
+#Remove Image
 docker rmi <IMAGE ID>
